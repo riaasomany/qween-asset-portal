@@ -251,7 +251,7 @@ copyBtn.addEventListener('click', async () => {
 
 // ─── Open Weavy ───────────────────────────────────────────────────────────────
 weavyBtn.addEventListener('click', () => {
-  window.open('https://weave.figma.com/', '_blank', 'noopener');
+  window.open('https://app.weavy.ai/flow/yXMi6R0KOEVUFIXY35HwEF', '_blank', 'noopener');
 });
 
 // ─── Jewellery input ──────────────────────────────────────────────────────────
