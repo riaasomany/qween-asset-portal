@@ -1,0 +1,459 @@
+/* Qween AI Asset Generation Portal */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap');
+
+/* ─── Tokens ─────────────────────────────────────────────────────────────── */
+:root {
+  --accent:       #111111;
+  --accent-light: rgba(17, 17, 17, 0.05);
+
+  --ink:          #111111;
+  --ink-mid:      #555555;
+  --ink-faint:    #999999;
+  --border:       #e0e0e0;
+  --border-dark:  #c0c0c0;
+  --bg:           #fafafa;
+  --surface:      #ffffff;
+
+  --font-serif:   'Playfair Display', Georgia, serif;
+  --font-sans:    'Inter', system-ui, sans-serif;
+
+  --radius-pill:  100px;
+  --radius-sm:    4px;
+
+  --transition:   0.18s ease;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+input, textarea { font-family: inherit; }
+
+/* ─── Layout ─────────────────────────────────────────────────────────────── */
+.site-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.site-header {
+  padding: 40px 0 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.site-header .site-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.brand-sub {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav-link:hover { color: var(--ink); }
+.nav-link.active { color: var(--ink); border-bottom: 1px solid var(--ink); }
+
+/* ─── Main content ───────────────────────────────────────────────────────── */
+.main {
+  padding: 0 0 80px;
+}
+
+/* ─── Step section ───────────────────────────────────────────────────────── */
+.step {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.step:last-of-type {
+  border-bottom: none;
+}
+
+.step-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  min-width: 40px;
+  transition: color var(--transition);
+}
+
+.step-title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.step-hint {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+
+.step-body {
+  padding-left: 56px;
+}
+
+/* ─── Pill grid ──────────────────────────────────────────────────────────── */
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--ink-mid);
+  background: var(--surface);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.pill.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #ffffff;
+}
+
+/* Suggested collection pill — subtle tint when a persona is active */
+.pill--suggested {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pill--suggested:hover {
+  background: var(--accent-light);
+}
+
+.pill--suggested.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.collection-label {
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+
+/* ─── Jewellery input ────────────────────────────────────────────────────── */
+.jewellery-input {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid var(--border-dark);
+  border-radius: 0;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--ink);
+  background: transparent;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.jewellery-input::placeholder {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.jewellery-input:focus {
+  border-bottom-color: var(--accent);
+}
+
+/* ─── Prompt output section ──────────────────────────────────────────────── */
+.prompt-section {
+  padding: 40px 0 0;
+}
+
+.prompt-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.prompt-section-title {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-mid);
+  letter-spacing: 0.02em;
+}
+
+.prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    opacity var(--transition);
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: #ffffff;
+  border: 1px solid var(--ink);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn--primary:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink-mid);
+  border: 1px solid var(--border-dark);
+}
+
+.btn--ghost:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.copy-feedback {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.copy-feedback.visible {
+  opacity: 1;
+}
+
+/* ─── Prompt document ────────────────────────────────────────────────────── */
+.prompt-document {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  min-height: 120px;
+  padding: 24px 28px;
+  transition: border-color var(--transition);
+}
+
+.prompt-document:has(#prompt-output:not(:empty)) {
+  border-color: var(--border-dark);
+}
+
+.prompt-placeholder {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-faint);
+  line-height: 1.7;
+  user-select: none;
+}
+
+#prompt-output {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: none;
+}
+
+.prompt-document-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.prompt-char-count {
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ─── Persona accent on step numbers ─────────────────────────────────────── */
+.step-number {
+  color: var(--accent);
+}
+
+/* ─── briefs.html stub styles ────────────────────────────────────────────── */
+.stub-hero {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.stub-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.stub-hero p {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--ink-mid);
+  max-width: 420px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.stub-tag {
+  display: inline-block;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .site-header { padding: 28px 0 24px; }
+
+  .site-header .site-wrap {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .step-body {
+    padding-left: 0;
+    padding-top: 4px;
+  }
+
+  .step-header {
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 14px;
+  }
+
+  .step-number { min-width: unset; }
+
+  .pill { font-size: 0.75rem; padding: 7px 13px; }
+
+  .prompt-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prompt-document { padding: 18px 18px; }
+
+  .btn { font-size: 0.6875rem; padding: 8px 16px; }
+}

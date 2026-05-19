@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qween — AI Asset Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-wrap">
+      <div class="header-brand">
+        <span class="brand-name">Qween</span>
+        <span class="brand-sub">AI Asset Generator</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link active">Generator</a>
+        <a href="briefs.html" class="nav-link">Brief Library</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="site-wrap">
+
+      <!-- Step 1 — Persona -->
+      <section class="step" id="step-1">
+        <div class="step-header">
+          <span class="step-number">01</span>
+          <div>
+            <h2 class="step-title">Persona</h2>
+          </div>
+        </div>
+        <div class="step-body">
+          <div class="pill-grid" id="persona-grid"></div>
+        </div>
+      </section>
+
+      <!-- Step 2 — Collection -->
+      <section class="step" id="step-2">
+        <div class="step-header">
+          <span class="step-number">02</span>
+          <div>
+            <h2 class="step-title">Collection</h2>
+          </div>
+        </div>
+        <div class="step-body">
+          <p class="collection-label" id="collection-label">Select a persona to see suggested collections</p>
+          <div class="pill-grid" id="collection-grid"></div>
+        </div>
+      </section>
+
+      <!-- Step 3 — Shoot Type -->
+      <section class="step" id="step-3">
+        <div class="step-header">
+          <span class="step-number">03</span>
+          <div>
+            <h2 class="step-title">Shoot Type</h2>
+          </div>
+        </div>
+        <div class="step-body">
+          <div class="pill-grid" id="shoot-type-grid"></div>
+        </div>
+      </section>
+
+      <!-- Step 4 — View -->
+      <section class="step" id="step-4">
+        <div class="step-header">
+          <span class="step-number">04</span>
+          <div>
+            <h2 class="step-title">View</h2>
+          </div>
+        </div>
+        <div class="step-body">
+          <div class="pill-grid" id="view-grid"></div>
+        </div>
+      </section>
+
+      <!-- Step 5 — Jewellery Piece -->
+      <section class="step" id="step-5">
+        <div class="step-header">
+          <span class="step-number">05</span>
+          <div>
+            <h2 class="step-title">Jewellery Piece</h2>
+            <p class="step-hint">SKU or description — leave blank to use collection reference</p>
+          </div>
+        </div>
+        <div class="step-body">
+          <input
+            type="text"
+            id="jewellery-input"
+            class="jewellery-input"
+            placeholder="e.g. QW-NC-4821 18k gold choker with pavé diamonds"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+      </section>
+
+      <!-- Prompt Output -->
+      <div class="prompt-section">
+        <div class="prompt-section-header">
+          <p class="prompt-section-title">Generated prompt</p>
+          <div class="prompt-actions">
+            <span class="copy-feedback" id="copy-feedback">Copied</span>
+            <button class="btn btn--ghost" id="weavy-btn" type="button">Open Weavy ↗</button>
+            <button class="btn btn--primary" id="copy-btn" type="button" disabled>Copy prompt</button>
+          </div>
+        </div>
+
+        <div class="prompt-document">
+          <p class="prompt-placeholder" id="prompt-placeholder">
+            Make your selections above and your prompt will appear here, ready to copy into Weavy.
+          </p>
+          <div id="prompt-output"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="generator.js"></script>
+</body>
+</html>
